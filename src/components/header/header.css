@@ -1,0 +1,6 @@
+.btn-theme {
+  background: unset;
+  border: none;
+  color: var(--COLOR-TEXT-700);
+  font-size: 2rem;
+}
