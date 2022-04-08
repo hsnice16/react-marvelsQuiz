@@ -1,0 +1,201 @@
+/** font-awesome **/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+/** kaushan font family **/
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+/** poshui-components **/
+@import url("https://cdn.jsdelivr.net/gh/hsnice16/PoshUI-Components@development/css/main.min.css");
+
+:root {
+  --COLOR-PRIMARY: var(--COLOR-BLUE-500);
+  --COLOR-PRIMARY-50: var(--COLOR-BLUE-50);
+  --COLOR-PRIMARY-300: var(--COLOR-BLUE-300);
+  --COLOR-PRIMARY-800: var(--COLOR-BLUE-800);
+
+  --COLOR-TEXT-500: var(--COLOR-SLATE-500);
+  --COLOR-TEXT-700: var(--COLOR-SLATE-700);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--COLOR-PRIMARY-50);
+  font-size: 1.6rem;
+}
+
+/** Button **/
+
+.btn-back-home,
+.btn-game-begin {
+  background-color: var(--COLOR-PRIMARY);
+  border: none;
+  border-radius: 0.4rem;
+  color: var(--COLOR-WHITE);
+  display: block;
+  font-size: 1.8rem;
+  margin: 0 auto 1rem;
+  padding: 2rem;
+}
+
+.btn-back-home:hover,
+.btn-game-begin:hover {
+  background-color: var(--COLOR-PRIMARY-800);
+}
+
+.left-double-angle-icon,
+.right-double-angle-icon {
+  transition: transform 0.2s;
+}
+
+/** Container **/
+
+.container {
+  color: var(--COLOR-TEXT-700);
+  margin: auto;
+  max-width: 120rem;
+}
+
+.container-question {
+  margin: auto;
+  max-width: 80rem;
+  padding: 2rem;
+}
+
+/** Link **/
+
+.link {
+  color: var(--COLOR-PRIMARY-800);
+  font-size: 2rem;
+  position: relative;
+}
+
+.link::after {
+  background: var(--COLOR-PRIMARY);
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transition: width 0.3s, left 0.3s;
+  width: 0;
+}
+
+.link:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+/** Main **/
+
+.main {
+  min-height: 75vh;
+}
+
+/** Option **/
+
+.answer-li {
+  transform: scale(1.05);
+}
+
+li:not(.option-li, .answer-li) {
+  opacity: 0.8;
+}
+
+.option-li:hover {
+  transform: scale(1.01);
+}
+
+/** Overriding **/
+
+.card {
+  overflow: hidden;
+  width: 33rem;
+}
+
+.stacked-list > li {
+  border-bottom: medium solid var(--COLOR-PRIMARY);
+  padding: 0;
+}
+
+.stacked-list > li.flex {
+  padding: 1rem;
+}
+
+/** Utility **/
+
+.ctr-text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 3.2rem;
+  justify-content: center;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.text-primary-800 {
+  color: var(--COLOR-PRIMARY-800);
+}
+
+/** Common **/
+
+nav > a::after,
+.ctr-text::before,
+.ctr-text:not(.total-score-para)::after {
+  background: var(--COLOR-TEXT-500);
+  content: "";
+  display: block;
+  height: 0.5rem;
+  width: 7rem;
+}
+
+.btn-back-home:hover .left-double-angle-icon,
+.link:hover .left-angle-icon {
+  transform: translateX(-25%);
+}
+
+.btn-game-begin:hover .right-double-angle-icon,
+.link:hover .right-angle-icon {
+  transform: translateX(25%);
+}
+
+/** Dark Theme **/
+
+[data-theme="dark"] {
+  --COLOR-CARD-BG: #2d333b;
+  --COLOR-PRIMARY-50: #22272e;
+  --COLOR-TEXT-700: #adbac7;
+  --COLOR-TEXT-800: #8d97a0;
+}
+
+[data-theme="dark"] :is(.card, .stacked-list li) {
+  background: var(--COLOR-CARD-BG);
+}
+
+[data-theme="dark"] .text-slate-800 {
+  color: var(--COLOR-TEXT-700);
+}
+
+[data-theme="dark"] :is(.link, .text-primary-800) {
+  color: var(--COLOR-TEXT-800);
+}
+
+/** Media Query **/
+
+@media only screen and (max-width: 40em) {
+  html {
+    font-size: 60%;
+  }
+
+  .container-question {
+    padding: 0;
+  }
+
+  :is(header, main).px-4 {
+    padding: 2rem;
+  }
+}

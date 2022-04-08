@@ -1,0 +1,4 @@
+.footer-home {
+  border-top: thin solid var(--COLOR-PRIMARY-300);
+  min-height: 15vh;
+}
