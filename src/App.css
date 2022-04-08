@@ -27,48 +27,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* scrollbar */
-
-::-webkit-scrollbar {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--COLOR-PRIMARY);
-  border: thick solid var(--COLOR-PRIMARY-50);
-  border-radius: 5rem;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--COLOR-PRIMARY-50);
-}
-
-/* button */
-
-.btn-back-home,
-.btn-game-begin {
-  background-color: var(--COLOR-PRIMARY);
-  border: none;
-  border-radius: 0.4rem;
-  color: var(--COLOR-WHITE);
-  display: block;
-  font-size: 1.8rem;
-  margin: 0 auto 1rem;
-  padding: 2rem;
-}
-
-.btn-back-home:hover,
-.btn-game-begin:hover {
-  background-color: var(--COLOR-PRIMARY-800);
-}
-
-.left-double-angle-icon,
-.right-double-angle-icon {
-  transition: transform 0.2s;
-}
-
-/* Container */
+/* container */
 
 .container {
   color: var(--COLOR-TEXT-700);
@@ -82,7 +41,7 @@ html {
   padding: 2rem;
 }
 
-/* Link */
+/* link */
 
 .link {
   color: var(--COLOR-PRIMARY-800);
@@ -106,13 +65,13 @@ html {
   width: 100%;
 }
 
-/* Main */
+/* main */
 
 .main {
   min-height: 75vh;
 }
 
-/* Option */
+/* option */
 
 .answer-li {
   transform: scale(1.05);
@@ -126,7 +85,7 @@ li:not(.option-li, .answer-li) {
   transform: scale(1.01);
 }
 
-/* Overriding */
+/* overriding */
 
 .stacked-list > li {
   border-bottom: medium solid var(--COLOR-PRIMARY);
@@ -137,7 +96,24 @@ li:not(.option-li, .answer-li) {
   padding: 1rem;
 }
 
-/* Utility */
+/* scrollbar */
+
+::-webkit-scrollbar {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--COLOR-PRIMARY);
+  border: thick solid var(--COLOR-PRIMARY-50);
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--COLOR-PRIMARY-50);
+}
+
+/* utility */
 
 .ctr-text {
   align-items: center;
@@ -153,7 +129,7 @@ li:not(.option-li, .answer-li) {
   color: var(--COLOR-PRIMARY-800);
 }
 
-/* Common */
+/* common */
 
 nav > a::after,
 .ctr-text::before,
@@ -175,7 +151,7 @@ nav > a::after,
   transform: translateX(25%);
 }
 
-/* Dark Theme */
+/* dark theme */
 
 [data-theme="dark"] {
   --COLOR-CARD-BG: #2d333b;
@@ -196,7 +172,7 @@ nav > a::after,
   color: var(--COLOR-TEXT-800);
 }
 
-/* Media Query */
+/* media query */
 
 @media only screen and (max-width: 40em) {
   html {

@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import { HomeData } from "data";
-import { useDocumentTitle } from "custom-hooks";
+import { ROUTE_QUIZ_RULES } from "utils";
+import { useDocumentTitle, useScrollToTop } from "custom-hooks";
 import { CategoryCard, InvertedCommas, KushanFontFamily } from "components";
 
 export const Home = () => {
-  const { categories, heroImg } = HomeData;
+  const {
+    categories,
+    heroImg: { altText, src },
+  } = HomeData;
 
   useDocumentTitle("Are you even a Marvel fan? Let's Check");
+  useScrollToTop();
 
   return (
     <main className="main px-1 py-2">
@@ -22,8 +27,8 @@ export const Home = () => {
       <img
         loading="lazy"
         className="block mx-auto w-33"
-        src={heroImg.src}
-        alt={heroImg.altText}
+        src={src}
+        alt={altText}
       />
 
       <blockquote className="ctr-text fw-bold">
@@ -40,7 +45,10 @@ export const Home = () => {
 
         <div className="align-i-ctr flex flex-wrap gap-2p5 justify-c-sa p-4">
           {categories.map((category) => (
-            <Link to="#" key={category._id}>
+            <Link
+              to={`${ROUTE_QUIZ_RULES}?category=${category.categoryName}`}
+              key={category._id}
+            >
               <CategoryCard category={category} />
             </Link>
           ))}

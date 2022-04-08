@@ -7,10 +7,17 @@ import {
   loveU3000GIF,
 } from "assets";
 
+import {
+  CATEGORY_AVENGERS_INFINITY_WAR,
+  CATEGORY_DOCTOR_STRANGE,
+  CATEGORY_CAPTAIN_MARVEL,
+} from "utils";
+
 export const HomeData = {
   categories: [
     {
       _id: uuid(),
+      categoryName: CATEGORY_AVENGERS_INFINITY_WAR,
       img: {
         altText: "avengers infinity war poster",
         src: avengerInfinityPoster,
@@ -22,6 +29,7 @@ export const HomeData = {
     },
     {
       _id: uuid(),
+      categoryName: CATEGORY_DOCTOR_STRANGE,
       img: {
         altText: "dr. strange poster",
         src: drStrangePoster,
@@ -33,6 +41,7 @@ export const HomeData = {
     },
     {
       _id: uuid(),
+      categoryName: CATEGORY_CAPTAIN_MARVEL,
       img: {
         altText: "captain marvel poster",
         src: captainMarvelPoster,

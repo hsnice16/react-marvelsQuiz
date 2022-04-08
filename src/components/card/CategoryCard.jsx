@@ -34,6 +34,7 @@ export const CategoryCard = ({ category }) => {
 CategoryCard.propTypes = {
   category: PropTypes.shape({
     _id: PropTypes.string,
+    categoryName: PropTypes.string,
     img: PropTypes.shape({ altText: PropTypes.string, src: PropTypes.string }),
     heading: PropTypes.string,
     description: PropTypes.string,
@@ -44,6 +45,7 @@ CategoryCard.propTypes = {
 CategoryCard.defaultProps = {
   category: {
     _id: "",
+    categoryName: "",
     img: {
       altText: "",
       src: "",

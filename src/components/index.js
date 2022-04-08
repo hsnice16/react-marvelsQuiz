@@ -1,3 +1,4 @@
+export { Button } from "./button/Button";
 export { CategoryCard } from "./card/CategoryCard";
 export { Footer } from "./footer/Footer";
 export { Header } from "./header/Header";
