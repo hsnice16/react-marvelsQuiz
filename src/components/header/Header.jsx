@@ -9,8 +9,7 @@ export const Header = () => {
       <nav className="fs-lg">
         <Link to={ROUTE_ROOT} className="text-primary-800">
           <KushanFontFamily textToShow="m" className="fs-xxl" />
-          arvels
-          <KushanFontFamily textToShow="Q" className="fs-xxl" />
+          arvels <KushanFontFamily textToShow="Q" className="fs-xxl" />
           uiz
         </Link>
       </nav>

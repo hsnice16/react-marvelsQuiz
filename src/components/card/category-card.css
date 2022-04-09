@@ -1,0 +1,5 @@
+.card {
+  color: var(--COLOR-TEXT-700);
+  overflow: hidden;
+  width: 33rem;
+}

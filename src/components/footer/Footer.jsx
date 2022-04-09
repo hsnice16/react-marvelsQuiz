@@ -1,4 +1,5 @@
 import "./footer.css";
+import classNames from "classnames";
 import { FooterSocialLinks } from "data";
 
 export const Footer = () => {
@@ -18,7 +19,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className={`fab fa-${linkFor}`}></i>
+                <i className={classNames("fab", `fa-${linkFor}`)}></i>
               </a>
             </li>
           ))}

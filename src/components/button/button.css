@@ -1,0 +1,21 @@
+.btn-back-home,
+.btn-game-begin {
+  background-color: var(--COLOR-PRIMARY);
+  border: none;
+  border-radius: 0.4rem;
+  color: var(--COLOR-WHITE);
+  display: block;
+  font-size: 1.8rem;
+  margin: 0 auto 1rem;
+  padding: 2rem;
+}
+
+.btn-back-home:hover,
+.btn-game-begin:hover {
+  background-color: var(--COLOR-PRIMARY-800);
+}
+
+.left-double-angle-icon,
+.right-double-angle-icon {
+  transition: transform 0.2s;
+}
