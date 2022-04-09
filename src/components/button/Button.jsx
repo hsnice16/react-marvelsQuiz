@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 
 export const Button = ({ className, iconDirection, btnText }) => (
   <button className={classNames(className, "translate-y")}>
-    {btnText}{" "}
-    <i
+    {btnText} <i
       className={classNames(
         `${iconDirection}-double-angle-icon`,
         "fas",
