@@ -1,11 +1,16 @@
-import { useSearchParams } from "react-router-dom";
 import { RulesData } from "data";
+import { ROUTE_QUIZ_QUESTION } from "utils";
+import { useNavigate } from "react-router-dom";
 import { Button, KushanFontFamily } from "components";
-import { useDocumentTitle, useScrollToTop } from "custom-hooks";
+import {
+  useDocumentTitle,
+  useScrollToTop,
+  useSearchParamsCategory,
+} from "custom-hooks";
 
 export const Rules = () => {
-  const [searchParams] = useSearchParams();
-  const category = searchParams.get("category");
+  const navigate = useNavigate();
+  const { category } = useSearchParamsCategory();
   const {
     [category]: { ahaText, name },
     heroImg: { altText, src },
@@ -37,8 +42,8 @@ export const Rules = () => {
         </h1>
 
         <ul className="max-w-45 stacked-list">
-          {rules.map(({ id, rule }) => (
-            <li key={id} className="align-i-fs flex shadow-light">
+          {rules.map(({ _id, rule }) => (
+            <li key={_id} className="align-i-fs flex shadow-light">
               <i className="fas fa-genderless mt-0p5"></i>
               <span className="ml-1">{rule} </span>
             </li>
@@ -46,6 +51,9 @@ export const Rules = () => {
         </ul>
 
         <Button
+          onClick={() => {
+            navigate(`${ROUTE_QUIZ_QUESTION}/one?category=${category}`);
+          }}
           className="btn-game-begin"
           iconDirection="right"
           btnText="Let's begin the game"
