@@ -5,3 +5,5 @@ export { default as drStrangePoster } from "./category/dr-strange.jpg";
 export { default as loveU3000GIF } from "./gifs/love-u-3000.gif";
 export { default as resultGIF } from "./gifs/result.gif";
 export { default as rulesGIF } from "./gifs/rules.gif";
+
+export { default as crossSearchPNG } from "./not-found/cross-search.png";
