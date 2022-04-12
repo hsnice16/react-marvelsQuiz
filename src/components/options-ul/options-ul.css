@@ -1,0 +1,24 @@
+/* option */
+
+.answer-li {
+  transform: scale(1.05);
+}
+
+li:not(.option-li, .answer-li) {
+  opacity: 0.8;
+}
+
+.option-li:hover {
+  transform: scale(1.01);
+}
+
+/* overriding */
+
+.stacked-list > li {
+  border-bottom: medium solid var(--COLOR-PRIMARY);
+  padding: 0;
+}
+
+.stacked-list > li.flex {
+  padding: 1rem;
+}

@@ -55,7 +55,6 @@ export const Rules = () => {
             navigate(`${ROUTE_QUIZ_QUESTION}/one?category=${category}`);
           }}
           className="btn-game-begin"
-          iconDirection="right"
           btnText="Let's begin the game"
         />
       </section>

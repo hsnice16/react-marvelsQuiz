@@ -1,4 +1,6 @@
 import { ResultData } from "data";
+import { ROUTE_QUIZ_ANSWERS } from "utils";
+import { useNavigate } from "react-router-dom";
 import { Button, KushanFontFamily } from "components";
 import {
   useDocumentTitle,
@@ -7,6 +9,7 @@ import {
 } from "custom-hooks";
 
 export const Result = () => {
+  const navigate = useNavigate();
   const { category } = useSearchParamsCategory();
   const {
     heroImg: { altText, src },
@@ -34,8 +37,10 @@ export const Result = () => {
       </p>
 
       <Button
+        onClick={() => {
+          navigate(`${ROUTE_QUIZ_ANSWERS}?category=${category}`);
+        }}
         className="btn-game-begin"
-        iconDirection="right"
         btnText="Show answers"
       />
     </main>
