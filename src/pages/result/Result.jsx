@@ -1,7 +1,8 @@
+import { useGame } from "context";
 import { ResultData } from "data";
-import { ROUTE_QUIZ_ANSWERS } from "utils";
 import { useNavigate } from "react-router-dom";
 import { Button, KushanFontFamily } from "components";
+import { ROUTE_QUIZ_ANSWERS, getTotalScore } from "utils";
 import {
   useDocumentTitle,
   useScrollToTop,
@@ -15,6 +16,11 @@ export const Result = () => {
     heroImg: { altText, src },
     [category]: { name },
   } = ResultData;
+
+  const {
+    game: { answers },
+  } = useGame();
+  const totalScore = getTotalScore(answers);
 
   useDocumentTitle("Here is your Report Card 😅");
   useScrollToTop();
@@ -32,7 +38,7 @@ export const Result = () => {
           <KushanFontFamily textToShow="Y" />
           our <KushanFontFamily textToShow="T" />
           otal <KushanFontFamily textToShow="S" />
-          core :<span className="text-primary-800"> 10 </span>
+          core :<span className="text-primary-800"> {totalScore} </span>
         </span>
       </p>
 

@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
 import { HomeData } from "data";
+import { useGame } from "context";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ROUTE_QUIZ_RULES } from "utils";
+import { ACTION_TYPE_RESET_GAME } from "reducer";
 import { useDocumentTitle, useScrollToTop } from "custom-hooks";
 import { CategoryCard, InvertedCommas, KushanFontFamily } from "components";
 
@@ -9,6 +12,14 @@ export const Home = () => {
     categories,
     heroImg: { altText, src },
   } = HomeData;
+
+  const { dispatch } = useGame();
+
+  useEffect(() => {
+    dispatch({ type: ACTION_TYPE_RESET_GAME });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useDocumentTitle("Are you even a Marvel fan? Let's Check");
   useScrollToTop();

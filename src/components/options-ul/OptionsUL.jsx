@@ -2,7 +2,14 @@ import "./options-ul.css";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-export const OptionsUL = ({ options, answer, category, onPage }) => (
+export const OptionsUL = ({
+  options,
+  answer,
+  category,
+  onPage,
+  questionNumber,
+  handleChange,
+}) => (
   <ul className="max-w-45 stacked-list">
     {options.map(({ _id, option }) => (
       <li
@@ -13,12 +20,6 @@ export const OptionsUL = ({ options, answer, category, onPage }) => (
           "shadow-light"
         )}
       >
-        <input
-          className="d-none"
-          type="radio"
-          name={`${category}-option-${option}`}
-          id={`option-${option}`}
-        />
         <label
           className={classNames(
             "inline-block",
@@ -27,6 +28,16 @@ export const OptionsUL = ({ options, answer, category, onPage }) => (
           )}
           htmlFor={`option-${option}`}
         >
+          <input
+            className="d-none"
+            type="radio"
+            name={`${category}-question-${questionNumber}`}
+            id={`option-${option}`}
+            onChange={() => {
+              handleChange(option);
+            }}
+          />
+
           <i
             className={classNames(
               "fas",
@@ -55,6 +66,8 @@ OptionsUL.propTypes = {
   answer: PropTypes.string,
   category: PropTypes.string,
   onPage: PropTypes.string,
+  questionNumber: PropTypes.string,
+  handleChange: PropTypes.func,
 };
 
 OptionsUL.defaultProps = {
@@ -62,4 +75,6 @@ OptionsUL.defaultProps = {
   answer: "",
   category: "",
   onPage: "",
+  questionNumber: "",
+  handleChange: () => {},
 };
