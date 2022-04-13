@@ -1,6 +1,7 @@
-import { useGame } from "context";
 import { ResultData } from "data";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useGame, useToast } from "context";
 import { Button, KushanFontFamily } from "components";
 import { ROUTE_QUIZ_ANSWERS, getTotalScore } from "utils";
 import {
@@ -21,6 +22,16 @@ export const Result = () => {
     game: { answers },
   } = useGame();
   const totalScore = getTotalScore(answers);
+
+  const { handleAddMoreToasts } = useToast();
+
+  useEffect(() => {
+    handleAddMoreToasts({
+      msg: "Report Card!! Don't forget to share 😉",
+    });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useDocumentTitle("Here is your Report Card 😅");
   useScrollToTop();

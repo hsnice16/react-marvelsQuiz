@@ -9,4 +9,6 @@ export { NotFound } from "./not-found/NotFound";
 
 export { OptionsUL } from "./options-ul/OptionsUL";
 export { ValidCategoryRoute } from "./route/ValidCategoryRoute";
+
 export { KushanFontFamily } from "./shared/kushan-font-family/KushanFontFamily";
+export { Toast } from "./toast/Toast";

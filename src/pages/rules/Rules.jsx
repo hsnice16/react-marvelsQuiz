@@ -1,4 +1,6 @@
 import { RulesData } from "data";
+import { useEffect } from "react";
+import { useToast } from "context";
 import { ROUTE_QUIZ_QUESTION } from "utils";
 import { useNavigate } from "react-router-dom";
 import { Button, KushanFontFamily } from "components";
@@ -16,6 +18,16 @@ export const Rules = () => {
     heroImg: { altText, src },
     rules,
   } = RulesData;
+
+  const { handleAddMoreToasts } = useToast();
+
+  useEffect(() => {
+    handleAddMoreToasts({
+      msg: "Read carefullly!! We know you are a rockstar 😎 BUT rules are rules",
+    });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useDocumentTitle("Rules are rules");
   useScrollToTop();
