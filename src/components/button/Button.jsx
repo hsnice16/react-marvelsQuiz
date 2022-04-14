@@ -2,29 +2,42 @@ import "./button.css";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-export const Button = ({ onClick, className, iconDirection, btnText }) => (
+export const Button = ({ onClick, className, btnText }) => (
   <button onClick={onClick} className={classNames(className, "translate-y")}>
-    {btnText}{" "}
-    <i
-      className={classNames(
-        `${iconDirection}-double-angle-icon`,
-        "fas",
-        `fa-angle-double-${iconDirection}`
-      )}
-    ></i>
+    {btnText === "Back to home" ? (
+      <>
+        <i
+          className={classNames(
+            "left-double-angle-icon",
+            "fas",
+            "fa-angle-double-left"
+          )}
+        ></i>{" "}
+        {btnText}
+      </>
+    ) : (
+      <>
+        {btnText}{" "}
+        <i
+          className={classNames(
+            "right-double-angle-icon",
+            "fas",
+            "fa-angle-double-right"
+          )}
+        ></i>
+      </>
+    )}
   </button>
 );
 
 Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
-  iconDirection: PropTypes.string,
   btnText: PropTypes.string,
 };
 
 Button.defaultProps = {
   onClick: () => {},
   className: "",
-  iconDirection: "",
   btnText: "",
 };
