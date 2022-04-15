@@ -1,0 +1,9 @@
+.dark-toast {
+  /* --COLOR-CARD-BG */
+  background: #2d333b;
+}
+
+.dark-toast > * {
+  /* --COLOR-TEXT-700 */
+  color: #adbac7;
+}
