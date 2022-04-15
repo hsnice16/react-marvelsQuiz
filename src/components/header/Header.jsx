@@ -19,10 +19,16 @@ export const Header = () => {
         </Link>
       </nav>
 
-      <button onClick={handleThemeToggle} className="btn-theme translate-y">
+      <button
+        onClick={handleThemeToggle}
+        className="btn-theme translate-y tooltip"
+      >
         <i
           className={classNames(theme === "dark" ? "fas" : "far", "fa-moon")}
         ></i>
+        <span className="tooltip-left tooltip-text">
+          change to {theme === "dark" ? "white" : "dark"}
+        </span>
       </button>
     </header>
   );

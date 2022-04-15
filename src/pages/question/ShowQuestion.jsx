@@ -3,7 +3,7 @@ import { QuestionsData } from "data";
 import { OptionsUL } from "components";
 import { useGame, useToast } from "context";
 import { ACTION_TYPE_SET_ANSWER } from "reducer";
-import { OtherPagesLink, QuestionNumber } from "./components";
+import { PrevNextLink, QuestionNumber } from "./components";
 import { useDocumentTitle, useScrollToTop } from "custom-hooks";
 import { capitalizeFirstLetter, getQuestionToastMsg } from "utils";
 
@@ -66,7 +66,7 @@ export const ShowQuestion = ({ category, questionNumber }) => {
           handleChange={handleChange}
         />
 
-        <OtherPagesLink category={category} prev={prev} next={next} />
+        <PrevNextLink category={category} prev={prev} next={next} />
       </section>
     </main>
   );

@@ -8,7 +8,7 @@ import {
   ROUTE_QUIZ_RESULT,
 } from "utils";
 
-export const OtherPagesLink = ({ category, prev, next }) => {
+export const PrevNextLink = ({ category, prev, next }) => {
   const prevLink =
     prev === "rules"
       ? `${ROUTE_QUIZ_RULES}?category=${category}`
@@ -44,13 +44,13 @@ export const OtherPagesLink = ({ category, prev, next }) => {
   );
 };
 
-OtherPagesLink.propTypes = {
+PrevNextLink.propTypes = {
   category: PropTypes.string,
   prev: PropTypes.string,
   next: PropTypes.string,
 };
 
-OtherPagesLink.defaultProps = {
+PrevNextLink.defaultProps = {
   category: "",
   prev: "",
   next: "",
