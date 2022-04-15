@@ -1,9 +1,9 @@
 import { HomeData } from "data";
-import { useGame } from "context";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_QUIZ_RULES } from "utils";
 import { ACTION_TYPE_RESET_GAME } from "reducer";
+import { useGame, useToast } from "context";
 import { useDocumentTitle, useScrollToTop } from "custom-hooks";
 import { CategoryCard, InvertedCommas, KushanFontFamily } from "components";
 
@@ -14,9 +14,14 @@ export const Home = () => {
   } = HomeData;
 
   const { dispatch } = useGame();
+  const { handleAddMoreToasts } = useToast();
 
   useEffect(() => {
     dispatch({ type: ACTION_TYPE_RESET_GAME });
+
+    handleAddMoreToasts({
+      msg: "Helloooooo!! So, How are you? We welcome you our marvel fan 🎉🎉",
+    });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

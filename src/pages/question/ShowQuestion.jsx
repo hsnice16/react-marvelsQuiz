@@ -1,11 +1,11 @@
-import { useGame } from "context";
 import PropTypes from "prop-types";
 import { QuestionsData } from "data";
 import { OptionsUL } from "components";
-import { capitalizeFirstLetter } from "utils";
+import { useGame, useToast } from "context";
 import { ACTION_TYPE_SET_ANSWER } from "reducer";
 import { PrevNextLink, QuestionNumber } from "./components";
 import { useDocumentTitle, useScrollToTop } from "custom-hooks";
+import { capitalizeFirstLetter, getQuestionToastMsg } from "utils";
 
 export const ShowQuestion = ({ category, questionNumber }) => {
   const {
@@ -25,6 +25,7 @@ export const ShowQuestion = ({ category, questionNumber }) => {
     game: { answers },
     dispatch,
   } = useGame();
+  const { handleAddMoreToasts } = useToast();
 
   const handleChange = (option) => {
     dispatch({
@@ -36,6 +37,10 @@ export const ShowQuestion = ({ category, questionNumber }) => {
           score: answer === option ? 2 : 0,
         },
       },
+    });
+
+    handleAddMoreToasts({
+      msg: getQuestionToastMsg(option),
     });
   };
 

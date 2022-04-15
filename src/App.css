@@ -68,6 +68,16 @@ html {
   min-height: 75vh;
 }
 
+/* overriding */
+.stacked-list > li {
+  border-bottom: medium solid var(--COLOR-PRIMARY);
+  padding: 0;
+}
+
+.stacked-list > li.flex {
+  padding: 1rem;
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   height: 1.5rem;
