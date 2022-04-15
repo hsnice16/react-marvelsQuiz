@@ -12,6 +12,10 @@ li:not(.option-li, .answer-li) {
   transform: scale(1.01);
 }
 
+.option-li i {
+  transition: color 0.2s;
+}
+
 /* overriding */
 
 .stacked-list > li {

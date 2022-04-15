@@ -1,0 +1,2 @@
+export const ACTION_TYPE_RESET_GAME = "RESET_GAME";
+export const ACTION_TYPE_SET_ANSWER = "SET_ANSWER";
