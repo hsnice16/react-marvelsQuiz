@@ -1,6 +1,6 @@
 import "./kushan-font-family.css";
-import classNames from "classnames";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 export const KushanFontFamily = ({ className, textToShow }) => (
   <span className={classNames("kushan-font-family", "mx-0p5", className)}>

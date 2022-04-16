@@ -1,0 +1,16 @@
+.twitter-link {
+  background: var(--COLOR-PRIMARY-50);
+  border: thin solid var(--COLOR-PRIMARY-300);
+  border-radius: 50%;
+  color: var(--COLOR-PRIMARY-800);
+  display: inline-flex;
+  font-size: 2.5rem;
+  height: 4.5rem;
+  margin: auto 1rem;
+  vertical-align: top;
+  width: 4.5rem;
+}
+
+.twitter-link > i {
+  margin: auto;
+}

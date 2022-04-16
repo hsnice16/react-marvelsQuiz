@@ -1,3 +1,4 @@
+import { MARVELS_QUIZ_USER_THEME } from "utils";
 import { createContext, useContext, useState } from "react";
 
 const ThemeContext = createContext({
@@ -7,13 +8,13 @@ const ThemeContext = createContext({
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("marvelsQuizUserTheme") ?? "dark"
+    localStorage.getItem(MARVELS_QUIZ_USER_THEME) ?? "dark"
   );
 
   const handleThemeToggle = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    localStorage.setItem("marvelsQuizUserTheme", newTheme);
+    localStorage.setItem(MARVELS_QUIZ_USER_THEME, newTheme);
   };
 
   const value = { theme, handleThemeToggle };

@@ -1,3 +1,4 @@
+import "./result.css";
 import { ResultData } from "data";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +50,24 @@ export const Result = () => {
           <KushanFontFamily textToShow="Y" />
           our <KushanFontFamily textToShow="T" />
           otal <KushanFontFamily textToShow="S" />
-          core :<span className="text-primary-800"> {totalScore} </span>
+          core :<span className="text-primary-800"> {totalScore} </span>{" "}
+          <a
+            className="tooltip twitter-link"
+            target="_blank"
+            rel="noreferrer"
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+              `Hey 👋 everyone, I scored ${totalScore} out of 10 on the ${name} quiz.
+              
+Let's see how much you will score? Play today `
+            )}&url=${encodeURIComponent(
+              "https://marvelsquiz.vercel.app/"
+            )}&via=hsnice16`}
+          >
+            <i className="fab fa-twitter"></i>
+            <span className="tooltip-left tooltip-text">
+              share with your friends
+            </span>
+          </a>
         </span>
       </p>
 

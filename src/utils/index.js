@@ -1,5 +1,6 @@
 export * from "./constants/categories";
 export * from "./constants/routes";
+export * from "./constants/storages";
 
 export { capitalizeFirstLetter } from "./functions/capitalizeFirstLetter";
 

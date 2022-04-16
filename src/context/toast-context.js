@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
 import { v4 as uuid } from "uuid";
 import { Toast } from "components";
+import { createContext, useContext, useState } from "react";
 
 const ToastContext = createContext({
   toasts: [],
