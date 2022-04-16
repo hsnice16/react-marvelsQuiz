@@ -1,6 +1,6 @@
 import "./button.css";
-import classNames from "classnames";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 export const Button = ({ onClick, className, btnText }) => (
   <button onClick={onClick} className={classNames(className, "translate-y")}>

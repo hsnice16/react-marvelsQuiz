@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { QuestionsData } from "data";
-import { OptionsUL } from "components";
+import { PrevNextLink } from "./components";
 import { useGame, useToast } from "context";
 import { ACTION_TYPE_SET_ANSWER } from "reducer";
-import { PrevNextLink, QuestionNumber } from "./components";
+import { OptionsUL, QuestionNumber } from "components";
 import { useDocumentTitle, useScrollToTop } from "custom-hooks";
 import { capitalizeFirstLetter, getQuestionToastMsg } from "utils";
 

@@ -1,10 +1,9 @@
 import "./header.css";
 import { useTheme } from "context";
 import { ROUTE_ROOT } from "utils";
+import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { KushanFontFamily } from "components";
-
-import classNames from "classnames";
 
 export const Header = () => {
   const { theme, handleThemeToggle } = useTheme();
@@ -27,7 +26,7 @@ export const Header = () => {
           className={classNames(theme === "dark" ? "fas" : "far", "fa-moon")}
         ></i>
         <span className="tooltip-left tooltip-text">
-          change to {theme === "dark" ? "white" : "dark"}
+          change to {theme === "dark" ? "light" : "dark"}
         </span>
       </button>
     </header>

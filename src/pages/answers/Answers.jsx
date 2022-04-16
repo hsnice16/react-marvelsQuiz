@@ -1,12 +1,17 @@
 import { QuestionsData } from "data";
 import { ROUTE_ROOT } from "utils";
 import { useNavigate } from "react-router-dom";
-import { Button, KushanFontFamily, OptionsUL } from "components";
 import {
   useDocumentTitle,
   useScrollToTop,
   useSearchParamsCategory,
 } from "custom-hooks";
+import {
+  Button,
+  KushanFontFamily,
+  OptionsUL,
+  QuestionNumber,
+} from "components";
 
 export const Answers = () => {
   const navigate = useNavigate();
@@ -34,15 +39,7 @@ export const Answers = () => {
 
           return (
             <section key={questionNumber} className="container-question">
-              <div className="mb-2 px-0p5">
-                <span className="fs-2">
-                  <span className="fw-bold">
-                    <KushanFontFamily textToShow="Q" />
-                    uestion:
-                  </span>
-                  <span className="text-primary-800"> {number}/5 </span>
-                </span>
-              </div>
+              <QuestionNumber number={number} onPage="Answers" />
 
               <h2 className="fs-3 text-center">{statement}</h2>
 
