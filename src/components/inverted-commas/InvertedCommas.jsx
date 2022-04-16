@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 export const InvertedCommas = ({ className, commaStyle }) => (
   <span className={classNames("fs-xl", className, "text-red-500")}>

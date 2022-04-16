@@ -1,7 +1,12 @@
+import "./toast.css";
 import { useEffect } from "react";
+import { useTheme } from "context";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 export const Toast = ({ msg, handleToastClose }) => {
+  const { theme } = useTheme();
+
   useEffect(() => {
     const timerId = setTimeout(() => {
       handleToastClose();
@@ -15,7 +20,7 @@ export const Toast = ({ msg, handleToastClose }) => {
   }, []);
 
   return (
-    <div className="toast">
+    <div className={classNames("toast", theme === "dark" ? "dark-toast" : "")}>
       <div className="toast-head">
         Message from marvelsQuiz
         <button className="toast-cross" onClick={handleToastClose}>
